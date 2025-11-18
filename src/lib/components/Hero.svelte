@@ -153,7 +153,7 @@
 
 	.scroll-indicator {
 		position: absolute;
-		bottom: var(--spacing-2xl);
+		bottom: calc(var(--spacing-2xl) + var(--spacing-xl));
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 3;

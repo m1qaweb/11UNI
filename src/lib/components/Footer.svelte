@@ -46,9 +46,8 @@
 				</div>
 
 				<div class="footer-column">
-					<h3 class="footer-heading">{UI_TEXT.navigation.menu}</h3>
-					<nav aria-label="ქვედა ნავიგაცია">
-						<ul class="footer-links">
+				<nav aria-label="ქვედა ნავიგაცია">
+					<ul class="footer-links">
 							{#each quickLinks as link}
 								<li>
 									<a href={link.href} class="footer-link">
@@ -89,9 +88,6 @@
 				{#if showSocial && socialLinks.length > 0}
 					<div class="footer-column">
 						<h3 class="footer-heading">{UI_TEXT.restaurantInfo.followUs}</h3>
-						<p class="footer-social-text">
-							{UI_TEXT.social.followUsOn} {UI_TEXT.restaurantInfo.socialMedia}
-						</p>
 						<div class="footer-social">
 							<SocialLinks links={socialLinks} variant="horizontal" size="medium" />
 						</div>

@@ -6,6 +6,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import ToastContainer from '$lib/components/ToastContainer.svelte';
 	import { breakfastPackages, businessLunchPackages, mainDishPackages, seafoodPackages, sushiPackages, soupPackages, burgerPackages, beveragePackages } from '$lib/data/menu-packages';
+	import bannerImg from '$assets/banner.png';
 
 	let activeCategory = $state('all');
 
@@ -42,7 +43,7 @@
 <ToastContainer />
 
 <main id="main-content" class="menu-page">
-	<section class="page-header">
+	<section class="page-header" style="--banner-img: url({bannerImg})">
 		<div class="container-custom">
 			<h1 class="page-title">მენიუ</h1>
 			<p class="page-subtitle">ავთენტური ქართული კერძები ტრადიციული რეცეპტებით</p>
@@ -93,7 +94,7 @@
 
 	.page-header {
 		padding: var(--spacing-3xl) 0 var(--spacing-2xl);
-		background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--banner-img) center/cover no-repeat;
 		border-bottom: 2px solid #e9ecef;
 		position: relative;
 		overflow: hidden;
@@ -112,18 +113,20 @@
 	.page-title {
 		font-size: clamp(2.5rem, 5vw, 3.5rem);
 		font-weight: 800;
-		color: var(--color-text);
+		color: white;
 		margin: 0 0 var(--spacing-sm) 0;
 		text-align: center;
 		letter-spacing: -0.5px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
 	.page-subtitle {
 		font-size: clamp(1.125rem, 2vw, 1.375rem);
-		color: var(--color-text-light);
+		color: white;
 		text-align: center;
 		margin: 0;
 		font-weight: 400;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
 	.menu-page > div {
