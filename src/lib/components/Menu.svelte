@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import type { MenuProps } from '$lib/types';
 	import { menuData } from '$lib/data/menu';
 	import MenuItem from './MenuItem.svelte';
@@ -121,11 +122,11 @@
 	function handleCategoryClick(category: typeof categories[0]) {
 
 		const sectionId = categoryToSectionMap[category.name] || categoryToSectionMap[category.id] || category.id;
-		goto(`/menu?category=${sectionId}`);
+		goto(`${base}/menu?category=${sectionId}`);
 	}
 
 	function viewAllMenu() {
-		goto('/menu');
+		goto(`${base}/menu`);
 	}
 
 	function scrollCategories(direction: 'left' | 'right') {
