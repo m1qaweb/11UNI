@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { NavItem } from '$lib/types';
+	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { smoothScrollTo, initScrollSpy, lockScroll, unlockScroll } from '$lib/utils/scroll';
 	import { UI_TEXT } from '$lib/constants/georgian-text';
@@ -14,6 +15,11 @@
 	let { items, isMobileMenuOpen, onToggle, onClose }: Props = $props();
 
 	let activeSection = $state<string | null>('home');
+
+	function getHref(href: string): string {
+		if (href.startsWith('#')) return href;
+		return `${base}${href}`;
+	}
 
 	$effect(() => {
 		if (typeof window !== 'undefined') {
@@ -131,7 +137,7 @@
 		{#each items as item (item.id)}
 			<li class="nav-item" role="none">
 				<a
-					href={item.href}
+					href={getHref(item.href)}
 					class="nav-link"
 					class:active={activeSection === item.id}
 					role="menuitem"

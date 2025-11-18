@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { restaurantInfo } from '$lib/data/restaurant-info';
 	import Navigation from './Navigation.svelte';
 	import CartButton from './CartButton.svelte';
@@ -71,7 +72,7 @@
 		<div class="header-content flex items-center justify-between py-4">
 
 			<div class="logo-section">
-				<a href="/" class="logo-link flex items-center gap-3" aria-label={restaurantInfo.name}>
+				<a href="{base}/" class="logo-link flex items-center gap-3" aria-label={restaurantInfo.name}>
 					<div class="logo-icon">
 						<svg
 							width="40"

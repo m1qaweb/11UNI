@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { FooterProps } from '$lib/types';
+	import { base } from '$app/paths';
 	import { restaurantInfo } from '$lib/data/restaurant-info';
 	import { UI_TEXT } from '$lib/constants/georgian-text';
 	import SocialLinks from './SocialLinks.svelte';
@@ -26,9 +27,9 @@
 	);
 
 	const quickLinks = [
-		{ label: UI_TEXT.navigation.home, href: '/' },
-		{ label: UI_TEXT.navigation.about, href: '/#about' },
-		{ label: UI_TEXT.navigation.menu, href: '/menu' }
+		{ label: UI_TEXT.navigation.home, href: `${base}/` },
+		{ label: UI_TEXT.navigation.about, href: `${base}/#about` },
+		{ label: UI_TEXT.navigation.menu, href: `${base}/menu` }
 	];
 </script>
 
@@ -102,11 +103,11 @@
 			<div class="footer-bottom-content">
 				<p class="copyright">{copyright}</p>
 				<div class="footer-bottom-links">
-					<a href="/privacy" class="footer-bottom-link">
+					<a href="{base}/privacy" class="footer-bottom-link">
 						{UI_TEXT.footer.privacyPolicy}
 					</a>
 					<span class="separator">•</span>
-					<a href="/terms" class="footer-bottom-link">
+					<a href="{base}/terms" class="footer-bottom-link">
 						{UI_TEXT.footer.termsOfService}
 					</a>
 				</div>
